@@ -22,7 +22,23 @@ def borrow_book(book_id, reader_id):
     }
     print(f"Book	borrowed	successfully.	Due	date:	{loans[book_id]['due_date']}")
     return True
-# TODO: return_book(book_id)
+
+
+def return_book(book_id):
+    if book_id not in loans:
+        print("Book is not on loan")
+        return False
+
+    reader_id = loans[book_id]["reader_id"]
+
+    books[book_id]["available"] = True
+    readers[reader_id]["books_borrowed"].remove(book_id)
+    del loans[book_id]
+
+    print("Book returned successfully")
+    return True
+
+
 # TODO: extend_loan(book_id, days)
 
 # ========== REPORT FUNCTIONS ==========
