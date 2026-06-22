@@ -20,6 +20,13 @@ def	search_book(title):
     return	results
 
 # TODO: get_available_books()
+def get_available_books():
+    available = []
+    for book_id, book in books.items():
+        if book["available"]:
+            available.append({"id": book_id, **book})
+    return available
+
 # TODO: get_overdue_loans()
 
 # ========== MAIN ==========
