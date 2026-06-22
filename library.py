@@ -39,7 +39,18 @@ def return_book(book_id):
     return True
 
 
-# TODO: extend_loan(book_id, days)
+def extend_loan(book_id, days):
+    if book_id not in loans:
+        print("Book is not on loan")
+        return False
+
+    current_due = datetime.strptime(loans[book_id]["due_date"], "%Y-%m-%d")
+    new_due = current_due + timedelta(days=days)
+    loans[book_id]["due_date"] = new_due.strftime("%Y-%m-%d")
+
+    print(f"Loan extended. New due date: {loans[book_id]['due_date']}")
+    return True
+
 
 # ========== REPORT FUNCTIONS ==========
 # TODO: search_book(title)
