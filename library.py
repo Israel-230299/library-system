@@ -8,7 +8,12 @@ books = {
     "B004": {"title": "The Little Prince", "author": "Antoine de Saint", "available": True},
     "B005": {"title": "Pride and Prejudice", "author": "Jane Austen", "available": True}
 }
-readers = {}
+readers = {
+    "R001": {"name": "David", "books_borrowed": []},
+    "R002": {"name": "Yael", "books_borrowed": []},
+    "R003": {"name": "Noam", "books_borrowed": []},
+    "R004": {"name": "Shira", "books_borrowed": []}
+}
 loans = {}
 
 # ========== LOAN FUNCTIONS ==========
