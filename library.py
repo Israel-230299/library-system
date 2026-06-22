@@ -60,3 +60,4 @@ def extend_loan(book_id, days):
 # ========== MAIN ==========
 if __name__ == "__main__":
     print("Library System Ready")
+    print("Loan	functions	ready")
