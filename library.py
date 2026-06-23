@@ -102,6 +102,22 @@ def get_overdue_loans():
 
 # ========== MAIN ==========
 if __name__ == "__main__":
-    print("Library System Ready")
-    print("Loan	functions	ready")
-    print("Data loaded: 5 books, 4 readers")
+    if __name__ == "__main__":
+        print("===	Library	System	Test	===\n")
+    print("Available	books:")
+    for book in get_available_books():
+        print(f"		-	{book['title']}")
+    print("\nSearching	for	'Harry':")
+    for book in search_book("Harry"):
+        print(f"		-	{book['title']}")
+    print("\nBorrowing	Harry	Potter	for	Noam:")
+    borrow_book("B001", "R003")
+    print("\nAvailable	books	now:")
+    for book in get_available_books():
+        print(f"		-	{book['title']}")
+    print("\nReturning	Harry	Potter:")
+    return_book("B001")
+    print("\nOverdue	loans:")
+    for loan in get_overdue_loans():
+        print(f"		-	{loan['book_title']}	(was	due:	{loan['due_date']})")
+
